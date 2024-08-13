@@ -52,6 +52,3 @@
 
 <p><h2>Contributing</h2></p>
 <p>Contributions, issues, and feature requests are welcome. Feel free to check issues page if you want to contribute.</p>
-
-<p><h2>License</h2></p>
-<p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
