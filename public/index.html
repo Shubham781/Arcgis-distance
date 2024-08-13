@@ -3,64 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArcGIS Global Distance Measurement</title>
-    <link rel="stylesheet" href="/arcgis_js_api/esri/themes/light/main.css">
+    <title>ArcGIS Distance Measurement</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.22/"></script>
+    <script src="app.js"></script>
     <style>
-        html, body, #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
+        html, body, #viewDiv { padding: 0; margin: 0; height: 100%; width: 100%; }
         #distanceDiv {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             padding: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
-            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             font-family: Arial, sans-serif;
         }
         #loadingDiv {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 24px;
-            z-index: 2000;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
         }
         #clearButton {
             position: absolute;
             bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            padding: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        #clearButton:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
     <div id="viewDiv"></div>
-    <div id="distanceDiv">Distance: <span id="distanceValue">0</span> km</div>
+    <div id="distanceDiv">Distance: <span id="distanceValue">0.00</span> km</div>
     <div id="loadingDiv">Loading...</div>
     <button id="clearButton">Clear</button>
-    <script>
-        var dojoConfig = {
-            packages: [{
-                name: "app",
-                location: location.pathname.replace(/\/[^/]+$/, "") + "/app"
-            }]
-        };
-    </script>
-    <script src="/arcgis_js_api/init.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
